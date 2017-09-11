@@ -1,0 +1,33 @@
+h1
+{
+  margin-left: 400px;
+  margin-bottom: 40px;
+}
+label{
+margin-left: 50px;
+}
+#name
+{
+  margin-left: 50px;
+  width: 1000px;
+}
+img
+{
+  height: 200px;
+  width: 200px;
+}
+#images
+{
+  margin-right: 30px;
+  margin-left: 30px;
+}
+#submit
+{
+  margin-left: 540px;
+}
+button
+{
+  margin-top: 100px;
+  margin-left: 120px;
+  margin-right: 10px;
+}
