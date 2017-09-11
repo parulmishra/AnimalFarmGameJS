@@ -1,4 +1,4 @@
-import {Farm , Tamagotchi} from './../js/animalfarm.js'
+import {Farm , Tamagotchi} from './../js/animalfarm.js';
 
 $(document).ready(function(){
 
@@ -15,8 +15,13 @@ $(document).ready(function(){
   {
     $("#pets").append('<div class="col-md-4">');
     $("#pets").append(tamagotchis["name"]);
-    $("#pets").append(tamagotchis["image"])
+    $("#pets").append(tamagotchis["image"]);
     $("#pets").append('</div>');
+    $("#pets").append('<div class="col-md-4">' +
+        '<button type="submit" name="command" class="btn btn-primary btn-lg" value="feed">Feed</button>'+
+        '<button type="submit" name="command" class="btn btn-primary btn-lg" value="sleep">Sleep</button>' +
+        '<button type="submit" name="command" class="btn btn-primary btn-lg" value="play">Play</button>' +
+      '</div>' +
+    '</div>');
   }
-
 });
