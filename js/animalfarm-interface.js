@@ -2,13 +2,13 @@ import {Farm , Tamagotchi} from './../js/animalfarm.js';
 
 $(document).ready(function(){
 
-  
+
   var image = "";
   $("img").click(function(){
     image = $(this).attr('src');
     console.log(image);
   });
-  
+
   var allTamagotchis = {};
 
   $("#create").submit(function(){
@@ -17,7 +17,7 @@ $(document).ready(function(){
     console.log("what is in the " + name);
     if(allTamagotchis.hasOwnProperty(name))
     {
-      alert("Same name dumbo");
+      alert("Choose a different name");
       return;
     }
     var newTamagotchi = new Tamagotchi(name,image);

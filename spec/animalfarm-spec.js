@@ -5,7 +5,9 @@ let newTamagotchi = new Tamagotchi("cat","img/cat.jpg");
 
   beforeEach(function(){
     jasmine.clock().install();
-    newTamagotchi.setParameters();
+    newTamagotchi.setSleep();
+    newTamagotchi.setFeed();
+    newTamagotchi.setPlay();
   });
 
   afterEach(function()
@@ -17,18 +19,26 @@ let newTamagotchi = new Tamagotchi("cat","img/cat.jpg");
   {
     expect(newTamagotchi.name).toEqual("cat");
     expect(newTamagotchi.image).toEqual("img/cat.jpg");
-    expect(newTamagotchi.foodLevel).toEqual(10);
+    expect(newTamagotchi.foodLevel).toEqual(20);
   });
 
-  it('should have a foodLevel of 7 after 3001 milliseconds', function()
+  it('should have a foodLevel of 17 after 3001 milliseconds', function()
   {
     jasmine.clock().tick(3001);
-    expect(newTamagotchi.foodLevel).toEqual(7);
-    expect(newTamagotchi.playLevel).toEqual(7);
-    expect(newTamagotchi.sleepLevel).toEqual(7);
-    expect(newTamagotchi.happiness).toEqual(7);
+    expect(newTamagotchi.foodLevel).toEqual(17);
   });
 
+  it('should have a sleepLevel of 17 after 3001 milliseconds', function()
+  {
+    jasmine.clock().tick(3001);
+    expect(newTamagotchi.sleepLevel).toEqual(14);
+  });
+
+  it('should have a playLevel of 11 after 3001 milliseconds', function()
+  {
+    jasmine.clock().tick(3001);
+    expect(newTamagotchi.playLevel).toEqual(11);
+  });
   // it('should be dead if the food level drops below zero', function() {
   //   newTamagotchi.foodLevel = 0;
   //   newTamagotchi.happiness();

@@ -12,7 +12,7 @@ export class Tamagotchi
   }
   setSleep()
   {
-    
+
       var sleepInterval = setInterval(() => {
       this.sleepLevel--;
       this.happiness--;
@@ -25,7 +25,7 @@ export class Tamagotchi
   }
   setFeed()
   {
-    
+
       var feedInterval = setInterval(() => {
       this.foodLevel--;
       this.happiness--;
