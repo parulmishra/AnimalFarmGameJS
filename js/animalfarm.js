@@ -10,32 +10,48 @@ export class Tamagotchi
     this.happiness = 10;
     this.isDead = false;
   }
-  allTamagotchis(name,image)
+  setSleep()
   {
-    name = this.name;
-    image = this.image;
-    var allPets = {};
-    var newTamagotchi = new Tamagotchi(name,image);
-    allPets.push["name"] = image;
-    return allPets;
-  }
-  setParameters()
-  {
-    const paramterInterval = setInterval(() => {
-      this.foodLevel--;
-      this.playLevel--;
+    
+      var sleepInterval = setInterval(() => {
       this.sleepLevel--;
       this.happiness--;
+      this.checkHappiness();
       if(this.isDead == true)
       {
-        clearInterval(paramterInterval);
+        clearInterval(sleepInterval);
       }
-    },1000);
+    },11000);
   }
-
+  setFeed()
+  {
+    
+      var feedInterval = setInterval(() => {
+      this.foodLevel--;
+      this.happiness--;
+      this.checkHappiness();
+      if(this.isDead == true)
+      {
+        clearInterval(feedInterval);
+      }
+    },3000);
+  }
+  setPlay()
+  {
+      var playInterval = setInterval(() => {
+      this.playLevel--;
+      this.happiness--;
+      this.checkHappiness();
+      if(this.isDead == true)
+      {
+        clearInterval(playInterval);
+      }
+    },9000);
+  }
   feed()
   {
-    if(isDead == true)
+    this.checkHappiness();
+    if(this.isDead == true)
     {
       return ;
     }
@@ -45,7 +61,8 @@ export class Tamagotchi
 
   sleep()
   {
-    if(isDead == true)
+    this.checkHappiness();
+    if(this.isDead == true)
     {
       return ;
     }
@@ -55,14 +72,15 @@ export class Tamagotchi
 
   play()
   {
-    if(isDead == true)
+    this.checkHappiness();
+    if(this.isDead == true)
     {
       return ;
     }
     this.playLevel = this.playLevel + 10;
     this.happiness++;
   }
-  happiness()
+  checkHappiness()
   {
     if(this.foodLevel <= 0 || this.playLevel <= 0 || this.sleepLevel <= 0)
     {
